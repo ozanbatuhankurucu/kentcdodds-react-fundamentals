@@ -4,9 +4,13 @@
 import * as React from 'react'
 import '../box-styles.css'
 
-function Box({className, style, children}) {
+function Box({className, style, children, ...otherProps}) {
   return (
-    <div style={{...style, fontStyle: 'italic'}} className={`box ${className}`}>
+    <div
+      style={{fontStyle: 'italic', ...style}}
+      className={`box ${className}`}
+      {...otherProps}
+    >
       {children}
     </div>
   )
