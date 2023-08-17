@@ -6,12 +6,10 @@ import * as React from 'react'
 function UsernameForm({onSubmitUsername}) {
   const handleSubmit = event => {
     event.preventDefault()
-    const usernameInputValue = event.target.elements[0].value
+    const usernameInputValue = event.target.elements.usernameInput.value
     onSubmitUsername(usernameInputValue)
   }
 
-  // 🐨 make sure to associate the label to the input.
-  // to do so, set the value of 'htmlFor' prop of the label to the id of input
   return (
     <form onSubmit={handleSubmit}>
       <div>
